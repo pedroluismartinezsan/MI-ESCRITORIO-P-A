@@ -1,0 +1,21 @@
+
+{
+  "id": "./",
+  "name": "Mi Escritorio P+A",
+  "short_name": "Mi Escritorio",
+  "description": "Escritorio personal de productividad",
+  "lang": "es-CO",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f6fa",
+  "theme_color": "#102744",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
