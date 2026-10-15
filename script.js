@@ -41,27 +41,40 @@ $$(".nav-item").forEach(button => {
   button.addEventListener("click", () => showView(button.dataset.view));
 });
 
+
 function openTool(tool) {
-  const labels = {
-    hola: "Hola",
-    app: "App"
+  const services = {
+    hola: {
+      title: "Hola",
+      url: null
+    },
+    app: {
+      title: "App",
+      url: "https://web.whatsapp.com/"
+    }
   };
 
-  $("#workspace-title").textContent = labels[tool] || "Mi espacio";
+  const service = services[tool];
 
-  $("#workspace-content").innerHTML = `
+  if (!service) return;
+
+  if (service.url) {
+    window.open(service.url, "_blank", "noopener,noreferrer");
+    return;
+  }
+
+  document.querySelector("#workspace-title").textContent =
+    service.title;
+
+  document.querySelector("#workspace-content").innerHTML = `
     <div class="workspace-symbol">✦</div>
-    <h3>${labels[tool] || "Mi espacio"}</h3>
-    <p>Este espacio está preparado para una herramienta autorizada.</p>
-    <p>Configura un acceso permitido antes de conectarlo a un servicio externo.</p>
+    <h3>Hola</h3>
+    <p>Espacio personal de acceso a herramientas autorizadas.</p>
   `;
 
   showView("inicio");
-  $("#workspace-title").scrollIntoView({
-    behavior: "smooth",
-    block: "center"
-  });
 }
+
 
 $$("[data-tool]").forEach(button => {
   button.addEventListener("click", () => openTool(button.dataset.tool));
