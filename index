@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102744">
+  <meta name="description" content="Mi escritorio personal P+A">
+  <title>Mi Escritorio P+A</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">P<span>+</span>A</div>
+      <div>
+        <strong>MI ESCRITORIO</strong>
+        <small>Panel personal</small>
+      </div>
+    </div>
+
+    <nav>
+      <button class="nav-item active" data-view="inicio">⌂ <span>Inicio</span></button>
+      <button class="nav-item" data-view="herramientas">▦ <span>Herramientas</span></button>
+      <button class="nav-item" data-view="agenda">▣ <span>Agenda</span></button>
+      <button class="nav-item" data-view="configuracion">⚙ <span>Configuración</span></button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span class="status-dot"></span> Escritorio personal
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">TU ESPACIO PERSONAL</div>
+        <h1 id="greeting">Bienvenido</h1>
+        <p id="today"></p>
+      </div>
+      <div class="clock-card">
+        <span class="clock-icon">◷</span>
+        <div>
+          <strong id="clock">00:00:00</strong>
+          <small>Hora local</small>
+        </div>
+      </div>
+    </header>
+
+    <section id="inicio" class="view">
+      <div class="section-heading">
+        <div>
+          <h2>Accesos rápidos</h2>
+          <p>Tus herramientas, organizadas en un solo lugar.</p>
+        </div>
+      </div>
+
+      <div class="app-grid">
+        <button class="app-card" data-tool="hola">
+          <span class="app-icon green">H</span>
+          <strong>Hola</strong>
+          <small>Herramienta de comunicación autorizada</small>
+          <span class="card-arrow">↗</span>
+        </button>
+
+        <button class="app-card" data-tool="app">
+          <span class="app-icon blue">A</span>
+          <strong>App</strong>
+          <small>Aplicación personal autorizada</small>
+          <span class="card-arrow">↗</span>
+        </button>
+
+        <a class="app-card" href="https://drive.google.com/" target="_blank" rel="noopener noreferrer">
+          <span class="app-icon gold">D</span>
+          <strong>Documentos</strong>
+          <small>Google Drive</small>
+          <span class="card-arrow">↗</span>
+        </a>
+
+        <a class="app-card" href="https://calendar.google.com/" target="_blank" rel="noopener noreferrer">
+          <span class="app-icon purple">C</span>
+          <strong>Calendario</strong>
+          <small>Google Calendar</small>
+          <span class="card-arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="workspace">
+        <div class="workspace-header">
+          <div>
+            <span class="eyebrow">ÁREA DE TRABAJO</span>
+            <h2 id="workspace-title">Mi espacio</h2>
+          </div>
+          <span class="workspace-mark">P+A</span>
+        </div>
+        <div class="workspace-content" id="workspace-content">
+          <div class="workspace-symbol">✦</div>
+          <h3>Todo en su lugar</h3>
+          <p>Selecciona una herramienta autorizada para comenzar.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="herramientas" class="view hidden">
+      <h2>Mis herramientas</h2>
+      <p class="muted">Configura los accesos de acuerdo con las aplicaciones que tengas autorizadas.</p>
+      <div class="settings-card">
+        <h3>Hola</h3>
+        <p>Acceso personal de comunicación.</p>
+        <button class="primary-button" data-tool="hola">Abrir panel</button>
+      </div>
+      <div class="settings-card">
+        <h3>App</h3>
+        <p>Acceso personal a una aplicación autorizada.</p>
+        <button class="primary-button" data-tool="app">Abrir panel</button>
+      </div>
+    </section>
+
+    <section id="agenda" class="view hidden">
+      <h2>Agenda</h2>
+      <p class="muted">Consulta la fecha actual y organiza tus actividades.</p>
+      <div class="settings-card">
+        <div id="calendar-title"></div>
+        <div id="calendar" class="calendar-grid"></div>
+      </div>
+    </section>
+
+    <section id="configuracion" class="view hidden">
+      <h2>Configuración</h2>
+      <p class="muted">Personaliza tu escritorio en este dispositivo.</p>
+      <div class="settings-card">
+        <label for="user-name">Nombre para el saludo</label>
+        <input id="user-name" maxlength="40" placeholder="Pedro">
+        <button class="primary-button" id="save-name">Guardar nombre</button>
+        <p class="muted small">El nombre se guarda localmente en este navegador.</p>
+      </div>
+    </section>
+
+    <footer>
+      <span>MI ESCRITORIO <b>P+A</b></span>
+      <span>Uso personal · 2026</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
